@@ -29,9 +29,9 @@ Remark: It is also available as [Node.js API package](https://www.npmjs.com/pack
 ## Prepare:
 1. Create a web application project folder, e.g.
    `mkdir ~/myapp`
-2. Create a virtual python environment for this folder:
+2. Create a virtual Python environment for this folder:
    `virtualenv ~/myapp`
-3. Change into the project folder and acivate the virtual environment:
+3. Change into the project folder and activate the virtual environment:
    `cd ~/myapp; source bin\activate`
 4. Install this package:
    _TBD_
@@ -44,15 +44,29 @@ Create a file, e.g. `firstapp.py`
 # Copyright (c) 2016 ma-ha, The MIT License (MIT)
 import webapp
 
-# initialze portal
+# initialize portal
 portal = webapp.Portal( { 'title':'Test' } )
 
 # define a custom web service 
-portal.addURL( '/myservice', 'myservice' )
+portal.addURL( '/greet', 'greet' )
 
-class myservice:
+class greet:
     def GET( self ):
-        return 'Hello World'
+        return 'Hello World!'
 
 # start the web server
-portal.run()```
+portal.run()
+```
+
+# TODOs
+- [x] First working _rest-web-ui_ integration
+- [ ] portal.getPage( name )  
+- [ ] portal.getPages()  
+- [ ] page.addView( def [, config]  )
+- [ ] page.addColumnsRow( id, width )
+- [ ] row.addView( def [, config] )
+- [ ] row.addColumnsRow ( id, height )
+- [ ] column.addView ( def [, config] )
+- [ ] column.addRowsColumn ( id, width )  
+- [ ] portal.addPage( pageId [, title] [, viewDef] [, viewConfig] ) incl automatic navigation tabs
+- [ ] I/O server and API

@@ -1,3 +1,4 @@
+# Copyright (c) 2016 ma-ha, The MIT License (MIT)
 import json
 
 class Header:

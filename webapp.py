@@ -1,3 +1,4 @@
+# Copyright (c) 2016 ma-ha, The MIT License (MIT)
 import web
 import page_layout as page
 
@@ -13,6 +14,9 @@ class Portal:
     def __init__( self, main_page ):
         self.pages.append( main_page )
         self.app = web.application( self.urls, globals() )
+        
+    def addURL(self, url_pattern, url_class ):
+        self.urls = self.urls + ( url_pattern, url_class )    
         
     def run(self):    
         print 'Startup...'

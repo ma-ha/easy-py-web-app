@@ -27,7 +27,8 @@ Remark: It is also available as [Node.js API package](https://www.npmjs.com/pack
 # Getting started
 
 ## Prepare:
-1. Create a web application project folder, e.g. `mkdir ~/myapp`
+1. Create a web application project folder, e.g. 
+  `mkdir ~/myapp`
 2. Create a virtual python environment for this folder: `virtualenv ~/myapp`
 3. Change into the project folder and acivate the virtual environment: `cd ~/myapp; source bin\activate`
 4. Install this package: _TBD_

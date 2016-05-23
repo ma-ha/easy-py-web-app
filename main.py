@@ -1,8 +1,8 @@
 # Copyright (c) 2016 ma-ha, The MIT License (MIT)
-import webapp 
+from easywebapp.webapp import Portal 
 
 # initialze portal
-portal = webapp.Portal( { 'title':'Test' } )
+portal = Portal( { 'title':'Test' } )
 
 # define a custom web service 
 portal.addURL( '/myservice', 'myservice' )

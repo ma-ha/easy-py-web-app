@@ -60,6 +60,7 @@ portal.run()
 
 # TODOs
 - [x] First working _rest-web-ui_ integration
+- [ ] PyPI package
 - [ ] portal.getPage( name )  
 - [ ] portal.getPages()  
 - [ ] page.addView( def [, config]  )

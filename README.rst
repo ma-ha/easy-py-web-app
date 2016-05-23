@@ -42,17 +42,18 @@ Create first web app with Python:
 ---------------------------------
 Create a file, e.g. ``firstapp.py``  
   
-    # Copyright (c) 2016 ma-ha, The MIT License (MIT)
-    import webapp
-    # initialize portal
-    portal = webapp.Portal( { 'title':'Test' } )
-    # define a custom web service 
-    portal.addURL( '/greet', 'greet' )
-    class greet:
-        def GET( self ):
-            return 'Hello World!'
-    # start the web server
-    portal.run()
+.. code:: python
+	# Copyright (c) 2016 ma-ha, The MIT License (MIT)
+	import webapp
+	# initialize portal
+	portal = webapp.Portal( { 'title':'Test' } )
+	# define a custom web service 
+	portal.addURL( '/greet', 'greet' )
+	class greet:
+	    def GET( self ):
+	        return 'Hello World!'
+	# start the web server
+	portal.run()
 
 TODOs
 -----

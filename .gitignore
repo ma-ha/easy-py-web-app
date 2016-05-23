@@ -9,6 +9,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 include/
+local
 local/
 bin/
 env/

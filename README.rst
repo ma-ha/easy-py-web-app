@@ -30,17 +30,17 @@ Getting started
 Prepare:
 --------
 1. Create a web application project folder, e.g.
-   `mkdir ~/myapp`
+   ``mkdir ~/myapp``
 2. Create a virtual Python environment for this folder:
-   `virtualenv ~/myapp`
+   ``virtualenv ~/myapp``
 3. Change into the project folder and activate the virtual environment:
-   `cd ~/myapp; source bin\activate`
+   ``cd ~/myapp; source bin\activate``
 4. Install this package:
    _TBD_
 
 Create first web app with Python:
 ---------------------------------
-Create a file, e.g. `firstapp.py`  
+Create a file, e.g. ``firstapp.py``  
   
     # Copyright (c) 2016 ma-ha, The MIT License (MIT)
     import webapp

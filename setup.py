@@ -12,7 +12,7 @@ setup(
 
     # Project uses reStructuredText, so ensure that the docutils get
     # installed or upgraded on the target machine
-    #install_requires = ['docutils>=0.3'],
+    install_requires = ['nose','WebTest'],
 
     #package_data = {
     #    # If any package contains *.txt or *.rst files, include them:
@@ -29,7 +29,8 @@ setup(
     url = "https://github.com/ma-ha/easy-py-web-app",
     license='MIT',
     long_description=read('README.rst'),
-     
+    test_suite = 'nose.collector',
+         
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Topic :: Internet :: WWW/HTTP",

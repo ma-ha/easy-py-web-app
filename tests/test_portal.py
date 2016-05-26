@@ -1,18 +1,23 @@
-import unittest
+from webtest import TestApp
+from nose.tools import *
+from easywebapp.webapp import Portal 
 
-from easywebapp.webapp import webapp
+class TestPortal():
 
+    def setup( self ):
+        middleware = []
+        portal = Portal( 8000, { 'title':'Test' } )
+        self.testApp = TestApp( portal.getApp().wsgifunc(*middleware) )
+        
+    def test_index(self):   
+        r = self.testApp.get('/')
+        assert_equal( r.status, '200 OK' )
+        r.mustcontain('portal-ng.js')
 
-class test_portal(unittest.TestCase):
-
-    def setUp(self):
-        pass
-
-    def test_something(self):
-        pass
-
-    def tearDown(self):
-        pass
-
-if __name__ == '__main__':
-    unittest.main()
+    def test_layout_main(self):   
+        r = self.testApp.get('/svc/layout/main')
+        assert_equal( r.status, '200 OK' )
+        r.mustcontain('layout')
+        r.mustcontain('header')
+        r.mustcontain('row')
+        r.mustcontain('footer')

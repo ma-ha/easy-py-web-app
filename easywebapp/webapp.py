@@ -11,17 +11,24 @@ class Portal:
         '^/svc/layout/(.*)', 'layout'
     )
 
-    def __init__( self, main_page ):
+    def __init__( self, port, main_page ):
         self.pages.append( main_page )
         self.app = web.application( self.urls, globals() )
         
+    def getApp(self):
+        return self.app
+    
     def addURL(self, url_pattern, url_class ):
         self.urls = self.urls + ( url_pattern, url_class )    
         
     def run(self):    
-        print 'Startup...'
+        print 'Start server...' 
         self.app.run()
 
+    def stop(self):
+        print 'Stop server...'
+        self.app.stop()
+        print 'Server stopped.'
 
 class index:
     def GET( self ):

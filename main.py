@@ -2,7 +2,7 @@
 from easywebapp.webapp import Portal 
 
 # initialze portal
-portal = Portal( { 'title':'Test' } )
+portal = Portal( 8000, { 'title':'Test' } )
 
 # define a custom web service 
 portal.addURL( '/myservice', 'myservice' )

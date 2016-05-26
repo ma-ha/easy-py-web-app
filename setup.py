@@ -1,18 +1,18 @@
 import os
 from setuptools import setup, find_packages
 
-def read( fname ):
-    return open( os.path.join( os.path.dirname(__file__), fname ) ).read()
-
+with open('README.rst') as reader:
+    readme = reader.read()
+    
 setup(
     name='easy-web-app',
-    version = "0.1.1",
+    version = "0.1.2",
     packages = ["easywebapp"],
     #scripts = ['webapp.py'],
 
     # Project uses reStructuredText, so ensure that the docutils get
     # installed or upgraded on the target machine
-    install_requires = ['nose','WebTest'],
+    install_requires = ['web.py','nose','WebTest'],
 
     #package_data = {
     #    # If any package contains *.txt or *.rst files, include them:
@@ -28,11 +28,12 @@ setup(
     keywords = "GUI web app browser AJAX easy portal REST RESTful web service form table I/O content serverless API centric",
     url = "https://github.com/ma-ha/easy-py-web-app",
     license='MIT',
-    long_description=read('README.rst'),
+    long_description=readme,
     test_suite = 'nose.collector',
          
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
+        "Programming Language :: Python :: 2",
         "Topic :: Internet :: WWW/HTTP",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",

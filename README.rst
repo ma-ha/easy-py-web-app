@@ -5,7 +5,7 @@ Create web applications easily.
 This is a `PyPI package <https://todo>`_
 for the `rest-web-gui <https://github.com/ma-ha/rest-web-ui>`_ framework.
 
-Focus is on _web applications_ (not simple web pages). 
+Focus is on *web applications* (not simple web pages). 
 A lot of plug-ins are available to get a portal it quickly configured:
 
 - Forms
@@ -44,24 +44,27 @@ Create first web app with Python:
 ---------------------------------
 Create a file, e.g. ``firstapp.py``  
   
-.. code:: python
+::
 
     # Copyright (c) 2016 ma-ha, The MIT License (MIT)
     import webapp
+
     # initialize portal
     portal = webapp.Portal( { 'title':'Test' } )
+
     # define a custom web service 
     portal.addURL( '/greet', 'greet' )
     class greet:
         def GET( self ):
             return 'Hello World!'
+
     # start the web server
     portal.run()
 
 TODOs
 -----
-- [x] First working _rest-web-ui_ integration
-- [ ] PyPI package
+- [x] First working *rest-web-ui* integration
+- [x] PyPI package
 - [ ] portal.getPage( name )  
 - [ ] portal.getPages()  
 - [ ] page.addView( def [, config]  )

@@ -11,6 +11,7 @@ __pycache__/
 include/
 local
 local/
+man/
 bin/
 env/
 build/

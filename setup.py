@@ -5,8 +5,8 @@ def read( fname ):
     return open( os.path.join( os.path.dirname(__file__), fname ) ).read()
 
 setup(
-    name='easywebapp',
-    version = "0.1.0",
+    name='easy-web-app',
+    version = "0.1.1",
     packages = ["easywebapp"],
     #scripts = ['webapp.py'],
 

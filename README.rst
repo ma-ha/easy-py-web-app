@@ -2,7 +2,7 @@ Easy Web App (for Python)
 =========================
 Create web applications easily. 
 
-This is a `PyPI package <https://todo>`_
+This is a `PyPI package <https://pypi.python.org/pypi/easy-web-app>`_
 for the `rest-web-gui <https://github.com/ma-ha/rest-web-ui>`_ framework.
 
 Focus is on *web applications* (not simple web pages). 
@@ -50,7 +50,7 @@ Create a file, e.g. ``firstapp.py``
     import webapp
 
     # initialize portal
-    portal = webapp.Portal( { 'title':'Test' } )
+    portal = Portal( 8000, { 'title':'Test' } )
 
     # define a custom web service 
     portal.addURL( '/greet', 'greet' )

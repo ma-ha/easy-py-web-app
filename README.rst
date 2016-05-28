@@ -65,8 +65,8 @@ TODOs
 -----
 - [x] First working *rest-web-ui* integration
 - [x] PyPI package
-- [ ] portal.getPage( name )  
-- [ ] portal.getPages()  
+- [x] portal.getPage( name )  
+- [ ] portal.addPage( name, page )  
 - [ ] page.addView( def [, config]  )
 - [ ] page.addColumnsRow( id, width )
 - [ ] row.addView( def [, config] )

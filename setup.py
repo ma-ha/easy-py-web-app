@@ -1,15 +1,17 @@
 import os
-from setuptools import setup, find_packages
+from setuptools import setup
 
 with open('README.rst') as reader:
     readme = reader.read()
     
 setup(
     name='easy-web-app',
-    version = "0.1.2",
+    version = "0.1.4",
     packages = ["easywebapp"],
     #scripts = ['webapp.py'],
-
+    #package_data = {
+    #    '': ['templates/*.html'],
+    #},
     # Project uses reStructuredText, so ensure that the docutils get
     # installed or upgraded on the target machine
     install_requires = ['web.py','nose','WebTest'],

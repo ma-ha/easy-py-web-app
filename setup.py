@@ -9,9 +9,9 @@ setup(
     version = "0.1.4",
     packages = ["easywebapp"],
     #scripts = ['webapp.py'],
-    #package_data = {
-    #    '': ['templates/*.html'],
-    #},
+    package_data = {
+        'easywebapp': ['templates/*.html'],
+    },
     # Project uses reStructuredText, so ensure that the docutils get
     # installed or upgraded on the target machine
     install_requires = ['web.py','nose','WebTest'],

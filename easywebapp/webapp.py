@@ -2,7 +2,7 @@
 import web
 import page_layout as page
 
-render = web.template.render('templates/')
+render = web.template.render( 'templates/' )
 
 class Portal:
     pages = []

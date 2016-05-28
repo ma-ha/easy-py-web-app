@@ -6,7 +6,7 @@ with open('README.rst') as reader:
     
 setup(
     name='easy-web-app',
-    version = "0.1.6",
+    version = "0.2.0",
     packages = ["easywebapp"],
     #scripts = ['webapp.py'],
     package_data = {
@@ -34,7 +34,7 @@ setup(
     test_suite = 'nose.collector',
          
     classifiers=[
-        "Development Status :: 2 - Pre-Alpha",
+        "Development Status :: 3 - Alpha",
         "Programming Language :: Python :: 2",
         "Topic :: Internet :: WWW/HTTP",
         "License :: OSI Approved :: MIT License",

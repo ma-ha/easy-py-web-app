@@ -48,9 +48,13 @@ Create a file, e.g. ``firstapp.py``
 
     # Copyright (c) 2016 ma-ha, The MIT License (MIT)
     import webapp
+    import easywebapp.page_layout as page
 
+    # create empty page
+    mainpage = page.PageLayout()
+    
     # initialize portal
-    portal = Portal( 8000, { 'title':'Test' } )
+    portal = Portal( 8000, mainpage )
 
     # define a custom web service 
     portal.addURL( '/greet', 'greet' )
@@ -65,8 +69,9 @@ TODOs
 -----
 - [x] First working *rest-web-ui* integration
 - [x] PyPI package
+- [ ] configure port from init
 - [x] portal.getPage( name )  
-- [ ] portal.addPage( name, page )  
+- [o] portal.addPage( name, page )  
 - [ ] page.addView( def [, config]  )
 - [ ] page.addColumnsRow( id, width )
 - [ ] row.addView( def [, config] )

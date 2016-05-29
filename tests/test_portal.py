@@ -31,11 +31,17 @@ class TestPortal():
         r.mustcontain('View 1')
         r.mustcontain('View 2')
 
-    def test_add_column_row(self):   
+    def test_add_coomplex_layout(self):   
         col_row = self.mainpage.getRows().addColumnsRow( 'row3', '200px' )
-        col_row.addView( page.View( 'Col 1', 'Col 1', 'none' ), '50%' )
-        col_row.addView( page.View( 'Col 2', 'Col 2', 'none' ), '50%' )
+        col_row.addView( page.View( 'Col 1', 'Col 1', 'none' ), '30%' )
+        col_row.addView( page.View( 'Col 2', 'Col 2', 'none' ), '30%' )
+        row = col_row.addRowsColumn( 'Col 3', '40%' )
+        row.addView( page.View( 'C3 R1', 'C3 R1', 'none' ), '100px'  )
+        row.addView( page.View( 'C3 R2', 'C3 R2', 'none' ), '100px'  )
+
         r = self.testApp.get( '/svc/layout/main/structure' )
         assert_equal( r.status, '200 OK' )
         r.mustcontain('Col 1')
-        r.mustcontain('Col 2')
+        r.mustcontain('Col 1')
+        r.mustcontain('C3 R1')
+        r.mustcontain('C3 R2')

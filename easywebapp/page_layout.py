@@ -6,12 +6,21 @@ from custom_json import ObjectEncoder
 
 class Rows:
     viewList = None
+    columnId = None
+    width    = None
     
-    def __init__( self ):
+    def __init__( self, columnId=None, width=None ):
         self.viewList =  []
+        if columnId != None:
+            self.columnId = columnId
+            self.width    = width
+
 
     def to_json(self):
-        return self.viewList
+        if self.columnId == None:
+            return self.viewList
+        else:
+            return { 'columnId':self.columnId, 'width':self.width, 'rows':self.viewList }
     
     def addView(self, view, height ):
         view.setRowId( view.id )
@@ -41,6 +50,10 @@ class Column:
         view.setWidth( width )  
         self.cols.append( view )
         
+    def addRowsColumn( self, columnId, width ):
+        row = Rows( columnId, width )
+        self.cols.append( row )
+        return row
     
 class View:
     def __init__( self, id, title, resourceURL ):

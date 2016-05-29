@@ -38,8 +38,8 @@ Prepare:
 3. Change into the project folder and activate the virtual environment:
    ``cd ~/myapp; source bin\activate``
 4. Install this package:
-   _TBD_
-
+   ``pip install easy-web-app``
+   
 Create first web app with Python:
 ---------------------------------
 Create a file, e.g. ``firstapp.py``  
@@ -78,5 +78,5 @@ TODOs
 - [x] row.addColumnsRow ( id, height )
 - [x] column.addView ( def [, config] )
 - [x] column.addRowsColumn ( id, width )  
-- [ ] View API
+- [x] View API
 - [ ] I/O server and API

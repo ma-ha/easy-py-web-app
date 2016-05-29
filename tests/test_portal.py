@@ -25,11 +25,10 @@ class TestPortal():
         r.mustcontain('footer')
 
     def test_add_view(self):   
-        self.mainpage.getRows().addView( page.View( 'View2', 'View 2', 'none' ), '400px' )
+        self.mainpage.getRows().addView( page.View( 'View1', 'View 1', 'none' ), '400px' )
         r = self.testApp.get( '/svc/layout/main/structure' )
         assert_equal( r.status, '200 OK' )
         r.mustcontain('View 1')
-        r.mustcontain('View 2')
 
     def test_add_coomplex_layout(self):   
         col_row = self.mainpage.getRows().addColumnsRow( 'row3', '200px' )

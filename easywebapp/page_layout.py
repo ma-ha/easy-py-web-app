@@ -62,17 +62,26 @@ class View:
         self.resourceURL = resourceURL
         self.decor = 'decor'
         
-    def setRowId(self, id ):
+    def setRowId( self, id ):
         self.rowId = id 
         
-    def setColumnId(self, id ):
+    def setColumnId( self, id ):
         self.columnId = id 
         
-    def setHeight(self, height ):
+    def setHeight( self, height ):
         self.height = height
         
-    def setWidth(self, width ):
+    def setWidth( self, width ):
         self.width = width
+
+    def setViewType( self, type ):
+        self.type = type
+
+    def setResourceURL( self, resourceURL ):
+        self.resourceURL = resourceURL
+
+    def setViewConfig( self, config ):
+        self.moduleConfig = config
         
         
 class Page:
@@ -82,7 +91,7 @@ class Page:
         self.title  = title
         self.header = { 'logoText':title, 'modules':[] }
         self.rows   = Rows()
-        self.rows.addView( View( 'View1', 'View 1', 'none' ), '400px' )
+        #self.rows.addView( View( 'View1', 'View 1', 'none' ), '400px' )
         self.footer = Footer()
     
     def getRows(self):

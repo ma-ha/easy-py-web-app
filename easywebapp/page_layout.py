@@ -3,24 +3,44 @@ import json
 
 from custom_json import ObjectEncoder
 
-class Footer:
-    def __init__( self ):
-        self.copyrightText = "Powered by <a href=\"https://github.com/ma-ha/rest-web-ui\">'Portal NG' {{PONGVER}}</a>, &copy; 2016, MH."
-        self.linkList = [ { "text":"About", "url": "index.html?layout=about"} ]
-        self.modules = [ { "id": "feedbackView", "type": "pong-feedback", "param": { } } ]       
 
 class Rows:
-    rows = None
+    viewList = None
+    
     def __init__( self ):
-        self.rows =  []
+        self.viewList =  []
 
     def to_json(self):
-        return self.rows
+        return self.viewList
     
     def addView(self, view, height ):
         view.setRowId( view.id )
         view.setHeight( height )  
-        self.rows.append( view )
+        self.viewList.append( view )
+        
+    def addColumnsRow( self, rowId, height ):
+        col = Column( rowId, height )
+        self.viewList.append( col )
+        return col
+    
+class Column:
+    rowId  = ''
+    height = ''
+    cols = None
+    
+    def __init__( self, rowId, height ):
+        self.rowId  = rowId
+        self.height = height
+        self.cols   =  []
+
+    #def to_json(self):
+    #    return self.cols
+    
+    def addView(self, view, width ):
+        view.setColumnId( view.id )
+        view.setWidth( width )  
+        self.cols.append( view )
+        
     
 class View:
     def __init__( self, id, title, resourceURL ):
@@ -32,28 +52,34 @@ class View:
     def setRowId(self, id ):
         self.rowId = id 
         
+    def setColumnId(self, id ):
+        self.columnId = id 
+        
     def setHeight(self, height ):
         self.height = height
         
     def setWidth(self, width ):
         self.width = width
         
+        
 class Page:
     rows = None
+    
     def __init__( self, title ):
         self.title  = title
         self.header = { 'logoText':title, 'modules':[] }
         self.rows   = Rows()
         self.rows.addView( View( 'View1', 'View 1', 'none' ), '400px' )
-        #self.rows.addView( View( 'View2', 'View 2', 'none' ), '300px' )
         self.footer = Footer()
     
     def getRows(self):
         return self.rows
     
+    
 class PageLayout:
     portal = None
     page = {}
+    
     def __init__( self, title ):
         self.page = Page( title )
 
@@ -68,7 +94,12 @@ class PageLayout:
         if self.portal != None :
             self.page.title  = self.portal.getTitle() 
             self.page.header = self.portal.getHeader()
-        print json.dumps( self.page, cls=ObjectEncoder, indent=2, sort_keys=False)
+        #print json.dumps( self.page, cls=ObjectEncoder, indent=2, sort_keys=False)
         return json.dumps( self.page, cls=ObjectEncoder, indent=2, sort_keys=False)
-        #return json.dump( self.page, cls=ObjectEncoder, indent=2, sort_keys=True)
-        #return json.dumps( self.page, default=lambda o: o.__dict__ )
+
+
+class Footer:
+    def __init__( self ):
+        self.copyrightText = "Powered by <a href=\"https://github.com/ma-ha/rest-web-ui\">'Portal NG' {{PONGVER}}</a>, &copy; 2016, MH."
+        self.linkList = [ { "text":"About", "url": "index.html?layout=about"} ]
+        self.modules = [ { "id": "feedbackView", "type": "pong-feedback", "param": { } } ]

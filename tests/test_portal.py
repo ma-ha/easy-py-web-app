@@ -30,3 +30,12 @@ class TestPortal():
         assert_equal( r.status, '200 OK' )
         r.mustcontain('View 1')
         r.mustcontain('View 2')
+
+    def test_add_column_row(self):   
+        col_row = self.mainpage.getRows().addColumnsRow( 'row3', '200px' )
+        col_row.addView( page.View( 'Col 1', 'Col 1', 'none' ), '50%' )
+        col_row.addView( page.View( 'Col 2', 'Col 2', 'none' ), '50%' )
+        r = self.testApp.get( '/svc/layout/main/structure' )
+        assert_equal( r.status, '200 OK' )
+        r.mustcontain('Col 1')
+        r.mustcontain('Col 2')

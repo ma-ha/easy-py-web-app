@@ -3,8 +3,9 @@ from easywebapp.webapp import Portal
 import easywebapp.page_layout as page
 
 mainpage = page.PageLayout( 'First Page' )
-view1 = page.View( 'WikiView', 'MediaWiki View', 'none' )
 
+# lets add a WIKI content view 
+view1 = page.View( 'WikiView', 'MediaWiki View', 'none' )
 view1.setViewType( 'pong-mediawiki' )
 view1.setResourceURL( 'http://${lang}.wikipedia.org/w/' )
 view1.setViewConfig(
@@ -14,6 +15,8 @@ view1.setViewConfig(
       'wikiRef': "/wiki/" }
 )
 mainpage.getRows().addView( view1, '300px' )
+
+# ... and now add some views in a "complex" layout
 col_row = mainpage.getRows().addColumnsRow( 'row3', '200px' )
 col_row.addView( page.View( 'Col 1', 'Col 1', 'none' ), '30%' )
 col_row.addView( page.View( 'Col 2', 'Col 2', 'none' ), '30%' )
@@ -25,6 +28,7 @@ row.addView( page.View( 'C3 R2', 'C3 R2', 'none' ), '100px'  )
 portal = Portal( 'My Portal', 8000, mainpage )
 
 # define a custom web service 
+# (that's not required here, just as an example)
 portal.addURL( '/myservice', 'myservice' )
 
 class myservice:

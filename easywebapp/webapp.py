@@ -18,7 +18,8 @@ class Portal:
     )
     title = 'My New Portal'
 
-    def __init__( self, port, main_page ):
+    def __init__( self, title, port, main_page ):
+        self.title = title
         portal_pages['main/structure'] = main_page 
         main_page.addToPortal( self )
         self.app = web.application( self.urls, globals() )
@@ -38,9 +39,6 @@ class Portal:
     def run(self):    
         print 'Start server...' 
         self.app.run()
-        
-    def setTitle(self, title):
-        self.title = title
 
     def getTitle(self):
         return self.title

@@ -46,24 +46,23 @@ Create a file, e.g. ``firstapp.py``
   
 ::
 
-    # Copyright (c) 2016 ma-ha, The MIT License (MIT)
-    import webapp
-    import easywebapp.page_layout as page
-
-    # create empty page
-    mainpage = page.PageLayout()
-    
-    # initialize portal
-    portal = Portal( 8000, mainpage )
-
-    # define a custom web service 
-    portal.addURL( '/greet', 'greet' )
-    class greet:
-        def GET( self ):
-            return 'Hello World!'
-
-    # start the web server
-    portal.run()
+	from easywebapp.webapp import Portal 
+	import easywebapp.page_layout as page
+	
+	mainpage = page.PageLayout( 'First Page' )
+	
+	# initialize portal
+	portal = Portal( 'My Portal', 8000, mainpage )
+	
+	# define a custom web service 
+	portal.addURL( '/myservice', 'myservice' )
+	
+	class myservice:
+	    def GET( self ):
+	        return 'Hello World'
+	
+	# start the web server
+	portal.run()
 
 TODOs
 -----
@@ -71,12 +70,11 @@ TODOs
 - [x] PyPI package
 - [ ] configure port from init
 - [x] portal.getPage( name )  
-- [o] portal.addPage( name, page )  
+- [.] portal.addPage( pageId [, title] [, viewDef] [, viewConfig] ) incl automatic navigation tabs
 - [ ] page.addView( def [, config]  )
 - [ ] page.addColumnsRow( id, width )
 - [ ] row.addView( def [, config] )
 - [ ] row.addColumnsRow ( id, height )
 - [ ] column.addView ( def [, config] )
 - [ ] column.addRowsColumn ( id, width )  
-- [ ] portal.addPage( pageId [, title] [, viewDef] [, viewConfig] ) incl automatic navigation tabs
 - [ ] I/O server and API

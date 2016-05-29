@@ -2,10 +2,10 @@
 from easywebapp.webapp import Portal 
 import easywebapp.page_layout as page
 
-mainpage = page.PageLayout()
+mainpage = page.PageLayout( 'First Page' )
 
-# initialze portal
-portal = Portal( 8000, mainpage )
+# initialize portal
+portal = Portal( 'My Portal', 8000, mainpage )
 
 # define a custom web service 
 portal.addURL( '/myservice', 'myservice' )

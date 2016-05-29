@@ -6,7 +6,7 @@ with open('README.rst') as reader:
     
 setup(
     name='easy-web-app',
-    version = "0.2.0",
+    version = "0.3.0",
     packages = ["easywebapp"],
     #scripts = ['webapp.py'],
     package_data = {

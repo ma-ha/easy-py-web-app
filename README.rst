@@ -70,11 +70,12 @@ TODOs
 - [x] PyPI package
 - [ ] configure port from init
 - [x] portal.getPage( name )  
-- [.] portal.addPage( pageId [, title] [, viewDef] [, viewConfig] ) incl automatic navigation tabs
-- [ ] page.addView( def [, config]  )
-- [ ] page.addColumnsRow( id, width )
-- [ ] row.addView( def [, config] )
-- [ ] row.addColumnsRow ( id, height )
-- [ ] column.addView ( def [, config] )
-- [ ] column.addRowsColumn ( id, width )  
+- [x] portal.addPage( pageId [, title] [, viewDef] [, viewConfig] ) 
+- [ ] Portal pages navigation tabs
+- [x] page.addView( def [, config]  )
+- [x] page.addColumnsRow( id, width )
+- [x] row.addView( def [, config] )
+- [x] row.addColumnsRow ( id, height )
+- [x] column.addView ( def [, config] )
+- [x] column.addRowsColumn ( id, width )  
 - [ ] I/O server and API

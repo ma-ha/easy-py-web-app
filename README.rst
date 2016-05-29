@@ -54,6 +54,11 @@ Create a file, e.g. ``firstapp.py``
 	# initialize portal
 	portal = Portal( 'My Portal', 8000, mainpage )
 	
+	# create a single view
+	view1 = page.View( 'View1', 'Example View', 'none' )
+	mainpage.getRows().addView( view1, '300px' )
+	
+	
 	# define a custom web service 
 	portal.addURL( '/myservice', 'myservice' )
 	
@@ -69,6 +74,7 @@ TODOs
 - [x] First working *rest-web-ui* integration
 - [x] PyPI package
 - [ ] configure port from init
+- [ ] business services API
 - [x] portal.getPage( name )  
 - [x] portal.addPage( pageId [, title] [, viewDef] [, viewConfig] ) 
 - [ ] Portal pages navigation tabs

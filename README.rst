@@ -78,4 +78,5 @@ TODOs
 - [x] row.addColumnsRow ( id, height )
 - [x] column.addView ( def [, config] )
 - [x] column.addRowsColumn ( id, width )  
+- [ ] View API
 - [ ] I/O server and API
